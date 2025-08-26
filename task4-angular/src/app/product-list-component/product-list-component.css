@@ -1,0 +1,37 @@
+.k-grid {
+  border: 1px solid #dee2e6;  
+  border-radius: 0.25rem;
+}
+
+.k-grid-header, .k-grid-content {
+  border: none;
+}
+
+.k-grid th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  text-align: center;
+}
+
+.k-grid td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.k-grid tr:nth-child(even) td {
+  background-color: #f2f2f2; 
+}
+
+.k-grid tr:hover {
+  background-color: #e9ecef; 
+}
+
+.k-pager-wrap {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.k-grid-toolbar button {
+  margin-right: 5px;
+}
