@@ -31,16 +31,10 @@ export class ProductListComponent {
 
   public selectedCategory: string | null = null;
 
-  public pageSize = 5;
-  public skip = 0;
-
   public whenChangeCategory(value: any): void {
     if (typeof value === 'string') {
       this.selectedCategory = value === '-- All --' ? null : value;
     }
   }
 
-  public whenChanged(event: any): void {
-    this.skip = event.skip;
-  }
 }

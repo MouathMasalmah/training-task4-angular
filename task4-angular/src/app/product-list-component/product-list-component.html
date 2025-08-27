@@ -13,12 +13,9 @@
   <kendo-grid
     [data]="products | categoryFilter: selectedCategory"
     [height]="400"
-    [pageSize]="pageSize"
-    [skip]="skip"
     [sortable]="true"
     [resizable]="true"
     [reorderable]="true"
-    (dataStateChange)="whenChanged($event)"
   >
     <kendo-grid-column field="id" title="ID" [width]="80"></kendo-grid-column>
     <kendo-grid-column field="name" title="Product Name" [width]="200"></kendo-grid-column>
