@@ -33,7 +33,6 @@ export class ProductListComponent {
 
   public whenChangeCategory(value: any): void {
     if (typeof value === 'string') {
-      // Set to null if '-- All --' is selected
       this.selectedCategory = value === '-- All --' ? null : value;
     }
   }
