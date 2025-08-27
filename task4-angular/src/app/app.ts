@@ -18,4 +18,9 @@ export class App {
     this.showHome.set(false);
     this.router.navigate(['/products']);
   }
+
+  showHomePage() {
+    this.showHome.set(true);
+    this.router.navigate(['/']);
+  }
 }
