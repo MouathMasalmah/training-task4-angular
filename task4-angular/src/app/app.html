@@ -1,2 +1,7 @@
+<div *ngIf="showHome()" class="home-container">
+  <h1>Welcome to Our Store</h1>
+  <p>Click below to explore our products.</p>
+  <button (click)="goToProductsPage()" class="btn">Go to Products</button>
+</div>
 
-<router-outlet />
+<router-outlet></router-outlet>
