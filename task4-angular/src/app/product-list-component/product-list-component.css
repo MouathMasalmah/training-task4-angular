@@ -1,37 +1,93 @@
-.k-grid {
-  border: 1px solid #dee2e6;  
-  border-radius: 0.25rem;
+.container {
+  max-width: 1000px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  padding: 0 10px; 
 }
 
-.k-grid-header, .k-grid-content {
-  border: none;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f7f7f7;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px #0000001a;
+  margin-bottom: 15px;
+  flex-wrap: wrap; 
 }
 
-.k-grid th {
-  background-color: #f8f9fa;
-  font-weight: 600;
-  text-align: center;
+.header h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
 }
 
-.k-grid td {
-  text-align: center;
-  vertical-align: middle;
+.category-select {
+  display: flex;
+  align-items: center;
+  margin-top: 10px; 
 }
 
-.k-grid tr:nth-child(even) td {
-  background-color: #f2f2f2; 
+.category-select label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #555;
 }
 
-.k-grid tr:hover {
-  background-color: #e9ecef; 
+.category-select select {
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.k-pager-wrap {
-  text-align: center;
-  font-size: 0.9rem;
-  margin-top: 10px;
+.category-select select:hover {
+  border-color: #888;
 }
 
-.k-grid-toolbar button {
-  margin-right: 5px;
+.category-select select:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px #4a90e280;
+}
+
+kendo-grid {
+  font-size: 14px;
+  overflow-x: auto; 
+  display: block; 
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; 
+    align-items: flex-start;
+  }
+
+  .category-select {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .category-select select {
+    width: 100%; 
+  }
+}
+
+@media (max-width: 480px) {
+  .header h2 {
+    font-size: 20px;
+  }
+
+  .category-select label {
+    font-size: 14px;
+  }
+
+  .category-select select {
+    font-size: 14px;
+    padding: 5px 8px;
+  }
 }

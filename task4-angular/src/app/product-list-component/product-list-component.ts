@@ -9,7 +9,8 @@ import { CategoryFilterPipe } from '../pips/category-filter-pipe';
   selector: 'app-product-list',
   standalone: true,
   imports: [CommonModule, FormsModule, GridModule, DropDownsModule, CategoryFilterPipe],
-  templateUrl: './product-list-component.html'
+  templateUrl: './product-list-component.html',
+  styleUrls: ['./product-list-component.css']
 })
 export class ProductListComponent {
   public products = [
