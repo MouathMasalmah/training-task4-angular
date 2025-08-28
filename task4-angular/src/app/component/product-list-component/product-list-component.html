@@ -43,7 +43,8 @@
     </kendo-grid-column>
     <kendo-grid-column title="Actions" [width]="120">
       <ng-template kendoGridCellTemplate let-dataItem>
-        <button (click)="deleteProduct(dataItem.id)">Delete</button>
+        <button class="btn-delete" (click)="deleteProduct(dataItem.id)">Delete</button>
+        <button class="btn-view" (click)="viewDetails(dataItem)">View Details</button>
       </ng-template>
     </kendo-grid-column>
   </kendo-grid>

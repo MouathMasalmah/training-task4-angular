@@ -4,6 +4,12 @@ import { Product } from '../../interface/product';
 const STORAGE_KEY = 'products';
 @Injectable({ providedIn: 'root' })
 export class ProductService {
+  updateProduct(product: Product) {
+    const updated = this.products().map(p => (p.id === product.id ? product : p));
+    this.products.set(updated);
+    this.saveToLocalStorage(updated);
+  }
+
   products = signal<Product[]>([]); 
   selectedProduct = signal<Product | null>(null);
 

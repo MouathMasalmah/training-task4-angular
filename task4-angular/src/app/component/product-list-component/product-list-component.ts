@@ -5,6 +5,7 @@ import { GridModule } from '@progress/kendo-angular-grid';
 import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 import { CategoryFilterPipe } from '../../pips/category-filter-pipe';
 import { ProductService } from '../../service/product-service/product-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -16,7 +17,7 @@ import { ProductService } from '../../service/product-service/product-service';
 export class ProductListComponent {
   selectedCategory: string | null = null;
 
-  constructor(public productService: ProductService) {}
+  constructor(public productService: ProductService, public router: Router) {}
 
   get products() {
     return this.productService.products();
@@ -40,4 +41,8 @@ export class ProductListComponent {
   deleteProduct(id: number) {
     this.productService.deleteProduct(id);
   }
+  viewDetails(product: any) {
+  this.productService.selectedProduct.set(product);
+  this.router.navigate(['/product', product.id]);
+}
 }
