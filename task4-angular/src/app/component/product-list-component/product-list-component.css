@@ -93,17 +93,38 @@ kendo-grid button {
   background-color: #45a049;
 }
 
-kendo-grid button {
-  background-color: #e53935;
+.btn-delete {
+  background-color: #e74c3c;
   color: white;
   border: none;
-  padding: 6px 12px;
+  padding: 5px 10px;
+  border-radius: 4px;
   cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.2s;
+  width: 90px;
+  margin-bottom: 15px;
 }
 
-kendo-grid button:hover {
-  background-color: #d32f2f;
+.btn-delete:hover {
+  background-color: #c0392b;
 }
+
+.btn-view {
+  background-color: #3498db; 
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 90px;
+}
+
+.btn-view:hover {
+  background-color: #2980b9;
+}
+
 
 kendo-grid {
   font-size: 14px;
