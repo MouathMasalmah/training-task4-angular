@@ -4,7 +4,6 @@ body {
   margin: 20px;
 }
 app-root {
-  display: block;
-  max-width: 800px;
+  max-width: 1500px;
   margin: auto;
 }
