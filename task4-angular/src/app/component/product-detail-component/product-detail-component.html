@@ -1,1 +1,13 @@
-<p>product-detail-component works!</p>
+<div class="container" *ngIf="productService.selectedProduct() as product; else noProduct">
+      <h2>Product Details</h2>
+      <p><strong>ID:</strong> {{ product.id }}</p>
+      <p><strong>Name:</strong> {{ product.name }}</p>
+      <p><strong>Price:</strong> {{ product.price | currency:'USD':'symbol' }}</p>
+      <p><strong>Category:</strong> {{ product.category }}</p>
+      <p><strong>Added Date:</strong> {{ product.addedDate | date:'longDate' }}</p>
+      <button (click)="backToPreviousPage()">Back to List</button>
+    </div>
+    <ng-template #noProduct>
+      <p>No product selected.</p>
+      <button routerLink="/">Back to List</button>
+    </ng-template>
