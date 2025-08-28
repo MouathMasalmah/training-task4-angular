@@ -17,7 +17,7 @@ input, select {
 }
 
 .error {
-  color: red;
+  color: #ff0000;
   font-size: 13px;
 }
 
@@ -31,10 +31,10 @@ button {
 
 button:nth-child(1) {
   background-color: #2ecc71;
-  color: white;
+  color: #ffffff;
 }
 
 button:nth-child(2) {
   background-color: #3498db;
-  color: white;
+  color: #ffffff;
 }

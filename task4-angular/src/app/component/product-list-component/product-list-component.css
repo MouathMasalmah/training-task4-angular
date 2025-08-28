@@ -78,7 +78,7 @@ kendo-grid button {
 
 .add-product-form button {
   background-color: #4CAF50;
-  color: white;
+  color: #ffffff;
   border: none;
   padding: 9px 15px;
   cursor: pointer;
@@ -95,7 +95,7 @@ kendo-grid button {
 
 .btn-delete {
   background-color: #e74c3c;
-  color: white;
+  color: #ffffff;
   border: none;
   padding: 5px 10px;
   border-radius: 4px;
@@ -112,7 +112,7 @@ kendo-grid button {
 
 .btn-view {
   background-color: #3498db; 
-  color: white;
+  color: #ffffff;
   border: none;
   padding: 5px 10px;
   border-radius: 4px;
