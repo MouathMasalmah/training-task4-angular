@@ -10,6 +10,13 @@
     </div>
   </div>
 
+  <form #productForm="ngForm" (ngSubmit)="addProduct(productForm)" class="add-product-form">
+    <input type="text" name="name" ngModel placeholder="Product Name" required>
+    <input type="number" name="price" ngModel placeholder="Price" required>
+    <input type="text" name="category" ngModel placeholder="Category" required>
+    <button type="submit" [disabled]="productForm.invalid">Add Product</button>
+  </form>
+
   <kendo-grid
     [data]="products | categoryFilter: selectedCategory"
     [height]="400"
@@ -32,6 +39,11 @@
     <kendo-grid-column field="addedDate" title="Added Date" [width]="180">
       <ng-template kendoGridCellTemplate let-dataItem>
         {{ dataItem.addedDate | date:'longDate' }}
+      </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column title="Actions" [width]="120">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        <button (click)="deleteProduct(dataItem.id)">Delete</button>
       </ng-template>
     </kendo-grid-column>
   </kendo-grid>

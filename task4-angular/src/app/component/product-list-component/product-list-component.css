@@ -14,7 +14,7 @@
   border-radius: 8px;
   box-shadow: 0 2px 6px #0000001a;
   margin-bottom: 15px;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
 .header h2 {
@@ -26,7 +26,7 @@
 .category-select {
   display: flex;
   align-items: center;
-  margin-top: 10px; 
+  margin-top: 10px;
 }
 
 .category-select label {
@@ -40,7 +40,7 @@
   font-size: 16px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  background-color: #ffffff;
+  background-color: #fff;
   cursor: pointer;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
@@ -55,25 +55,74 @@
   box-shadow: 0 0 5px #4a90e280;
 }
 
+.add-product-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.add-product-form input,
+.add-product-form button,
+kendo-grid button {
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.add-product-form input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  flex: 1 1 200px;
+}
+
+.add-product-form button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 9px 15px;
+  cursor: pointer;
+}
+
+.add-product-form button:disabled {
+  background-color: #a5d6a7;
+  cursor: not-allowed;
+}
+
+.add-product-form button:hover:not(:disabled) {
+  background-color: #45a049;
+}
+
+kendo-grid button {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+kendo-grid button:hover {
+  background-color: #d32f2f;
+}
+
 kendo-grid {
   font-size: 14px;
-  overflow-x: auto; 
-  display: block; 
+  overflow-x: auto;
+  display: block;
 }
 
 @media (max-width: 768px) {
   .header {
-    flex-direction: column; 
+    flex-direction: column;
     align-items: flex-start;
   }
 
   .category-select {
-    margin-top: 10px;
     width: 100%;
   }
 
   .category-select select {
-    width: 100%; 
+    width: 100%;
   }
 }
 
@@ -82,10 +131,7 @@ kendo-grid {
     font-size: 20px;
   }
 
-  .category-select label {
-    font-size: 14px;
-  }
-
+  .category-select label,
   .category-select select {
     font-size: 14px;
     padding: 5px 8px;
