@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="header">
+    <h2>Product List</h2>
+    <div class="category-select">
+      <label for="category">Choose Category:</label>
+      <select id="category" [(ngModel)]="selectedCategory">
+        <option [ngValue]="null">-- All Products --</option>
+        <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+      </select>
+    </div>
+  </div>
+
+  <form #productForm="ngForm" (ngSubmit)="addProduct(productForm)" class="add-product-form">
+    <input type="text" name="name" ngModel placeholder="Product Name" required>
+    <input type="number" name="price" ngModel placeholder="Price" required>
+    <input type="text" name="category" ngModel placeholder="Category" required>
+    <button type="submit" [disabled]="productForm.invalid">Add Product</button>
+  </form>
+
+  <kendo-grid
+    [data]="products | categoryFilter: selectedCategory"
+    [height]="400"
+    [sortable]="true"
+    [resizable]="true"
+    [reorderable]="true"
+  >
+    <kendo-grid-column field="id" title="ID" [width]="80"></kendo-grid-column>
+    <kendo-grid-column field="name" title="Product Name" [width]="200"></kendo-grid-column>
+    <kendo-grid-column field="price" title="Price" filter="numeric" [width]="150">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        {{ dataItem.price | currency:'USD':'symbol' }}
+      </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="category" title="Category" [width]="200">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        {{ dataItem.category }}
+      </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="addedDate" title="Added Date" [width]="180">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        {{ dataItem.addedDate | date:'longDate' }}
+      </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column title="Actions" [width]="120">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        <button class="btn-delete" (click)="deleteProduct(dataItem.id)">Delete</button>
+        <button class="btn-view" (click)="viewDetails(dataItem)">View Details</button>
+      </ng-template>
+    </kendo-grid-column>
+  </kendo-grid>
+</div>
