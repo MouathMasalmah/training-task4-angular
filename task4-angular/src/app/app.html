@@ -1,15 +1,15 @@
 <div class="app-header">
   <h1>My Store</h1>
   <nav>
-    <a (click)="showHomePage()" class="nav-link">Home</a>
+    <a (click)="goToHomePage()" class="nav-link">Home</a>
     <a (click)="goToProductsPage()" class="nav-link">Products</a>
   </nav>
 </div>
 
-<div *ngIf="showHome()" class="home-container">
+<div *ngIf="homePage()" class="home-container">
   <h2>Welcome to Our Store!</h2>
   <p>Explore our products by clicking the button below.</p>
   <button (click)="goToProductsPage()" class="btn-go-products">Go to Products</button>
 </div>
 
-<router-outlet *ngIf="!showHome()"></router-outlet>
+<router-outlet *ngIf="!homePage()"></router-outlet>

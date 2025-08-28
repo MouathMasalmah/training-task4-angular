@@ -10,17 +10,17 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./app.css']
 })
 export class App {
-  showHome = signal(true);
+  homePage = signal(true);
 
   constructor(private router: Router) {}
 
   goToProductsPage() {
-    this.showHome.set(false);
+    this.homePage.set(false);
     this.router.navigate(['/products']);
   }
 
-  showHomePage() {
-    this.showHome.set(true);
+  goToHomePage() {
+    this.homePage.set(true);
     this.router.navigate(['/']);
   }
 }
